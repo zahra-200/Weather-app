@@ -53,6 +53,7 @@ function App() {
           Feel : {weatherData ? ` ${weatherData?.main.feels_like}` : "--"}
         </h2>
         <p>Note : Temperatures are in Kelvin Unit.</p>
+        <h4>*If you live in Iran , please turn on VPN.</h4>
       </div>
     </div>
   );

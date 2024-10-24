@@ -47,3 +47,10 @@
   font-weight: 800;
   color: rgba(203, 0, 24, 0.721);
 }
+.mainContainer .content h4 {
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 1px;
+  word-spacing: 10px;
+  color: rgb(109, 116, 161);
+}
