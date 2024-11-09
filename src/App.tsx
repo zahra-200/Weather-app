@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getCurrrentWeather } from "./servises/api";
 import { WeatherData } from "./types/server";
-import styled from "./app.module.css";
+
 interface City {
   id: number;
   name: string;
@@ -24,9 +24,12 @@ function App() {
   };
 
   return (
-    <div className={styled.mainContainer}>
-      <p className={styled.title}>Weather App</p>
-      <select onChange={handleChange} className={styled.selectBox}>
+    <div className="flex flex-col w-72 text-white justify-center gap-5">
+      <p className="text-3xl font-semibold">Weather App</p>
+      <select
+        onChange={handleChange}
+        className="text-blue-950 font-medium text-center rounded-md"
+      >
         <option value="Select" disabled selected>
           Select your City
         </option>
@@ -36,24 +39,34 @@ function App() {
           </option>
         ))}
       </select>
-      <div className={styled.content}>
-        <h2>
+      <div className="flex flex-col gap-5">
+        <h2 className="text-2xl font-medium">
           {weatherData
             ? `${weatherData?.sys.country} / ${weatherData?.name}`
             : "Country / City"}
         </h2>
 
-        <h1>{weatherData ? `${weatherData?.main.temp}` : "--"} </h1>
+        <h1 className="text-5xl font-extrabold text-center">
+          {weatherData ? `${weatherData?.main.temp}` : "--"}{" "}
+        </h1>
 
-        <h2>
+        <h2 className="text-xl font-medium">
           {weatherData ? `${weatherData?.weather[0].description}` : "-- -- "}
         </h2>
-        <h2>
+        <h2 className="text-xl font-medium">
           {" "}
           Feel : {weatherData ? ` ${weatherData?.main.feels_like}` : "--"}
         </h2>
-        <p>Note : Temperatures are in Kelvin Unit.</p>
-        <h4>*If you live in Iran , please turn on VPN.</h4>
+        <div>
+          <p className="font-medium text-sm tracking-wider">
+            <span className="font-bold text-xl text-rose-800">Note :</span>{" "}
+            Temperatures are in Kelvin Unit.
+          </p>
+          <h4 className="font-medium text-sm tracking-wider">
+            <span className="text-rose-800 font-bold text-xl mr-1">*</span>If
+            you live in Iran , please turn on VPN.
+          </h4>
+        </div>
       </div>
     </div>
   );

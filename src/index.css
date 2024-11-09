@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
   font-family: "Halant", serif;
@@ -13,6 +16,7 @@ body {
   );
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
