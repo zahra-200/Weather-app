@@ -24,48 +24,51 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col w-72 text-white justify-center gap-5">
-      <p className="text-3xl font-semibold">Weather App</p>
-      <select
-        onChange={handleChange}
-        className="text-blue-950 font-medium text-center rounded-md"
-      >
-        <option value="Select" disabled selected>
-          Select your City
-        </option>
-        {cities.map((item) => (
-          <option key={item.id} value={JSON.stringify(item)}>
-            {item.name}
+    <div className=" bg-slate-400 bg-opacity-80 rounded-3xl p-3 sm:p-14">
+      <div className="flex flex-col w-72 text-slate-800 justify-center gap-5  ">
+        <p className="text-2xl sm:text-3xl font-semibold">Weather App</p>
+        <select
+          onChange={handleChange}
+          className="text-blue-950 font-medium text-center rounded-md"
+        >
+          <option value="Select" disabled selected>
+            Select your City
           </option>
-        ))}
-      </select>
-      <div className="flex flex-col gap-5">
-        <h2 className="text-2xl font-medium">
-          {weatherData
-            ? `${weatherData?.sys.country} / ${weatherData?.name}`
-            : "Country / City"}
-        </h2>
+          {cities.map((item) => (
+            <option key={item.id} value={JSON.stringify(item)}>
+              {item.name}
+            </option>
+          ))}
+        </select>
+        <div className="flex flex-col gap-5">
+          <h2 className=" text-xl sm:text-2xl font-medium">
+            {weatherData
+              ? `${weatherData?.sys.country} / ${weatherData?.name}`
+              : "Country / City"}
+          </h2>
 
-        <h1 className="text-5xl font-extrabold text-center">
-          {weatherData ? `${weatherData?.main.temp}` : "--"}{" "}
-        </h1>
+          <h1 className=" text-4xl sm:text-5xl font-extrabold text-center">
+            {weatherData ? `${weatherData?.main.temp}` : "--"}{" "}
+          </h1>
 
-        <h2 className="text-xl font-medium">
-          {weatherData ? `${weatherData?.weather[0].description}` : "-- -- "}
-        </h2>
-        <h2 className="text-xl font-medium">
-          {" "}
-          Feel : {weatherData ? ` ${weatherData?.main.feels_like}` : "--"}
-        </h2>
-        <div>
-          <p className="font-medium text-sm tracking-wider">
-            <span className="font-bold text-xl text-rose-800">Note :</span>{" "}
-            Temperatures are in Kelvin Unit.
-          </p>
-          <h4 className="font-medium text-sm tracking-wider">
-            <span className="text-rose-800 font-bold text-xl mr-1">*</span>If
-            you live in Iran , please turn on VPN.
-          </h4>
+          <h2 className=" text-lg sm:text-xl font-medium">
+            {weatherData ? `${weatherData?.weather[0].description}` : "-- -- "}
+          </h2>
+          <h2 className="text-lg sm:text-xl font-medium">
+            {" "}
+            Feel : {weatherData ? ` ${weatherData?.main.feels_like}` : "--"}
+          </h2>
+          <hr />
+          <div>
+            <p className="font-medium text-sm tracking-wider">
+              <span className="font-bold text-lg sm:text-xl text-white">Note :</span>{" "}
+              Temperatures are in Kelvin Unit.
+            </p>
+            <h4 className="font-medium text-sm tracking-wider">
+              <span className="text-white font-bold text-lg sm:text-xl mr-1">*</span>If
+              you live in Iran , please turn on VPN.
+            </h4>
+          </div>
         </div>
       </div>
     </div>

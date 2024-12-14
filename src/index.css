@@ -7,15 +7,10 @@ body {
   font-family: "Halant", serif;
   font-weight: 200;
   font-style: normal;
-  background: rgb(127, 191, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(127, 191, 255, 1) 30%,
-    rgba(64, 146, 217, 1) 75%,
-    rgba(0, 121, 217, 1) 100%
-  );
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-image:url("./images/bg1.jpg") ;
+  
+  background-size: cover;
   height: 100vh;
   display: flex;
   justify-content: center;
